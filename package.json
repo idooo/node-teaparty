@@ -1,0 +1,25 @@
+{
+  "author": "Alex Shteinikov <alex.shteinikov@gmail.com> (http://www.shteinikov.com/)",
+  "name": "node-teaparty2",
+  "description": "Send data to Teaparty2 via push API",
+  "version": "0.5.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/idooo/node-teaparty.git"
+  },
+  "main": "./index",
+  "keywords": [
+    "teaparty",
+    "teaparty2",
+    "teaparty-push",
+    "teaparty2-push",
+    "node-teaparty",
+    "node-teaparty2"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
