@@ -10,7 +10,7 @@ npm install node-teaparty
 
 ##Usage##
 
-```
+```js
 var Teaparty = require(‘node-teaparty’);
 
 var teaparty = new Teaparty({hostname: 'localhost'});
@@ -29,7 +29,7 @@ var teaparty = new Teaparty({hostname: 'localhost'});
 ##Methods##
 
 ###Raw send###
-```
+```js
 teaparty.send(widgetKey, data, function (err, data) {
     //callback with response from Teaparty
 });
@@ -46,7 +46,7 @@ teaparty.send(widgetKey, data, function (err, data) {
 ```
 
 ###Number###
-```
+```js
 var bar = new teaparty.Number('62465070-9fc0-11e4-a490-7fb3698741f2');
 bar.send(value, function (err, data) {
     //callback with response from Teaparty
@@ -57,6 +57,7 @@ bar.send(value, function (err, data) {
 
 ```
 42
+```
 
 ## License
 
