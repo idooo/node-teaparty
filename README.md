@@ -47,7 +47,7 @@ teaparty.send(widgetKey, data, function (err, data) {
 
 ###Number###
 ```js
-var bar = new teaparty.Number('62465070-9fc0-11e4-a490-7fb3698741f2');
+var bar = new teaparty.Number(widgetKey);
 bar.send(value, function (err, data) {
     //callback with response from Teaparty
 });
