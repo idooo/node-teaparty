@@ -29,6 +29,8 @@ var teaparty = new Teaparty({hostname: 'localhost'});
 ##Methods##
 
 ###Raw send###
+Method to send raw data object ot any widget
+
 ```js
 teaparty.send(widgetKey, data, function (err, data) {
     //callback with response from Teaparty
@@ -45,7 +47,7 @@ teaparty.send(widgetKey, data, function (err, data) {
 ]
 ```
 
-###Number###
+###Number widget###
 ```js
 var bar = new teaparty.Number(widgetKey);
 bar.send(value, function (err, data) {
@@ -57,6 +59,47 @@ bar.send(value, function (err, data) {
 
 ```
 42
+```
+
+
+###Highcharts widget###
+```js
+var bar = new teaparty.Highcharts(widgetKey);
+
+bar.send(chartObj, function (err, data) {
+   //callback with response from Teaparty
+});
+```
+`chartObj` is a Highcharts Chart data object (read [official documentation](http://www.highcharts.com/docs)). For example
+
+```
+{
+    chart: {
+        plotShadow: false
+    },
+    title: {
+        text: 'Browser market shares example'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Browser share',
+        data: [
+            ['Firefox',  45.0],
+            ['IE',       26.8],
+            ['Chrome',   12.8],
+            ['Safari',    8.5],
+            ['Opera',     6.2],
+            ['Others',    0.7]
+        ]
+    }]
+}
 ```
 
 ## License
