@@ -65,7 +65,6 @@ bar.send(value, function (err, data) {
 ###Highcharts widget###
 ```js
 var bar = new teaparty.Highcharts(widgetKey);
-
 bar.send(chartObj, function (err, data) {
    //callback with response from Teaparty
 });
@@ -100,6 +99,29 @@ bar.send(chartObj, function (err, data) {
         ]
     }]
 }
+```
+
+###List widget###
+```js
+var bar = new teaparty.List(widgetKey);
+bar.send(arr, function (err, data) {
+    //callback with response from Teaparty
+});
+
+```
+`arr` is Array of objects with keys `value` and `label`, for example
+
+```
+[ 
+	{ 
+		"value": 2.4, 
+		"label": "Average kittens age" 
+	}, 
+	{ 
+		"value": 100, 
+		"label": "Just random number" 
+	} 
+]
 ```
 
 ## License
