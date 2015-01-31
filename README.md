@@ -11,7 +11,7 @@ npm install node-teaparty
 ##Usage##
 
 ```js
-var Teaparty = require(‘node-teaparty’);
+var Teaparty = require('node-teaparty');
 
 var teaparty = new Teaparty({hostname: 'localhost'});
 ```
