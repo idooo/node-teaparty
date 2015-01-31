@@ -1,6 +1,6 @@
 {
   "author": "Alex Shteinikov <alex.shteinikov@gmail.com> (http://www.shteinikov.com/)",
-  "name": "node-teaparty2",
+  "name": "node-teaparty",
   "description": "Send data to Teaparty2 via push API",
   "version": "0.5.0",
   "repository": {

@@ -29,7 +29,7 @@ var teaparty = new Teaparty({hostname: 'localhost'});
 ##Methods##
 
 ###Raw send###
-Method to send raw data object ot any widget
+Generic method to send raw data object to any type of widget
 
 ```js
 teaparty.send(widgetKey, data, function (err, data) {
@@ -47,6 +47,21 @@ teaparty.send(widgetKey, data, function (err, data) {
 ]
 ```
 
+###Text widget###
+```js
+var bar = new teaparty.Text(widgetKey);
+bar.send(text, function (err, data) {
+    //callback with response from Teaparty
+});
+
+```
+`text` is String, for example
+
+```
+You are not your $#*@ framework!
+```
+
+
 ###Number widget###
 ```js
 var bar = new teaparty.Number(widgetKey);
@@ -61,6 +76,64 @@ bar.send(value, function (err, data) {
 42
 ```
 
+###Status widget###
+```js
+var bar = new teaparty.Status(widgetKey);
+bar.send(status, function (err, data) {
+    //callback with response from Teaparty
+});
+
+```
+There are two statuses for this widget so `status` may be a string (`"up"` or `"down"`), boolean value or anything that will be casted to boolean. For example, these values are the same:
+
+```
+"up"
+true
+1
+{simple: "object"}
+``` 
+
+###RAG widget###
+Status widget, based on the Red, Amber and Green colors used in a traffic light rating system (read more on [Wikipedia](http://en.wikipedia.org/wiki/Traffic_light_rating_system))
+
+```js
+var bar = new teaparty.RAG(widgetKey);
+bar.send(arr, function (err, data) {
+   //callback with response from Teaparty
+});
+```
+`arr` is an Array contains 3 objects with `value` and `text` properties. For example
+
+```
+[ 
+	{ "value": 3, "text": "Reds" }, 
+	{ "value": 12, "text": "Ambers" }, 
+	{ "value": 87, "text": "Greens" } 
+]
+```
+
+###List widget###
+```js
+var bar = new teaparty.List(widgetKey);
+bar.send(arr, function (err, data) {
+    //callback with response from Teaparty
+});
+
+```
+`arr` is Array of objects with keys `value` and `label`, for example
+
+```
+[ 
+	{ 
+		"value": 2.4, 
+		"label": "Average kittens age" 
+	}, 
+	{ 
+		"value": 100, 
+		"label": "Just random number" 
+	} 
+]
+```
 
 ###Highcharts widget###
 ```js
@@ -99,29 +172,6 @@ bar.send(chartObj, function (err, data) {
         ]
     }]
 }
-```
-
-###List widget###
-```js
-var bar = new teaparty.List(widgetKey);
-bar.send(arr, function (err, data) {
-    //callback with response from Teaparty
-});
-
-```
-`arr` is Array of objects with keys `value` and `label`, for example
-
-```
-[ 
-	{ 
-		"value": 2.4, 
-		"label": "Average kittens age" 
-	}, 
-	{ 
-		"value": 100, 
-		"label": "Just random number" 
-	} 
-]
 ```
 
 ## License
