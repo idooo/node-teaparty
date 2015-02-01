@@ -1,6 +1,6 @@
 # node-teaparty
 
-This is module for Node.js to push data to Teaparty2 dashboard
+This is module for Node.js to push data to [Teaparty2](https://github.com/idooo/teaparty2) dashboard
 
 ##Install##
 
